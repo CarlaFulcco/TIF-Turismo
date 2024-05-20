@@ -100,8 +100,8 @@ header{
 
 /*GRID*/
 .hotel-item-img{
-    width: 90%;
-    height: auto;
+    width: 450px;
+    height: 400px;
     margin: 20px;
     
 }
