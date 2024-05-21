@@ -3,14 +3,32 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
+html, body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 body{
+    font-family: 'Roboto', sans-serif;
     background-color: white;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
+}
+
+.main-content{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.main-content #hotel-item{
+    flex: 1;
 }
 
 h2{
@@ -26,58 +44,93 @@ h3{
 
 p{
     color: #ffffff;
+    font-size: 1rem;
 }
 
 a, li{
     font-family: 'Roboto', sans-serif;
-    color: white;    
+    color: white;
+    font-size: 1.2rem;
+    display: block;    
 }
 
 
 /*HEADER*/
-.logo-header img{
-    width: 55px;
-}
 
 header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color:#edde05;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2rem;
-    position:relative;
+    padding: 0.5em 2em;
     width: 100%;
     
+}
+.logo-header {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.logo-header img{
+    width: 55px;
+    height: auto;
+}
+
+.nav-menu {
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    position: relative;
 }
 
 .nav-menu ul{
     display: flex;
+    list-style: none;
     align-items: center;
-    z-index: 1000;
 }
 
 .nav-menu li{
     margin-right: 3rem;
 }
 
-.nav-menu a:hover{
-    color: red;
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+.nav-menu a:hover{
+    color: red;
+    
+}
 .nav-menu li:last-child{
     background-color: #ec870c;
     border: 4.5px solid #ec870c;
-    padding: .25rem , 75rem;
-    border-radius: .2rem;
+    padding: 0.25rem, 0.75rem;
+    border-radius: 0.2rem;
 
 }
 
 .nav-menu li:last-child:hover{
     background: #ec870c;
     border: 4.5px solid #ec870c;
+    border-radius: 50px;
 }
 
+.checkbtn {
+    display: none;
+}
 
+.menu-icon{
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
 .menu-icon img{
     width: 30px;
     height: 30px;
@@ -94,6 +147,8 @@ header{
     width: 100%;
     height: 100%;
     padding-top: 5px;
+    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 /*GRID*/
@@ -112,8 +167,7 @@ header{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(4,1fr);
-    column-gap: 20px;
-    row-gap: 10px;
+    gap: 10px 20px;
     place-content: center;
     place-items: center;   
 }
@@ -241,17 +295,20 @@ input::placeholder, textarea::placeholder{
     align-items: center;
     background-color:#edde05;
     display: flex;
+    flex-direction: row;
     height: 100px;
     width: 100%;
     gap: 20px;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 #footer a{
     text-decoration: none;
     color: #FFF;
-    position: static;
-    margin-right: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: row;
     
 }
 
@@ -266,8 +323,8 @@ input::placeholder, textarea::placeholder{
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    left: 50;
-    right: 50;
+    left: 50px;
+    right: 50px;
     bottom: 30px;
 }
 
@@ -277,7 +334,157 @@ input::placeholder, textarea::placeholder{
 
 
 /*MEDIA QUERIS*/
-@media screen and (min-width:768px) and (max-width:1023px) {
+@media screen and (max-width:672px) {
+    
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .logo-header img {
+        width: 40px;
+    }
+
+    .nav-menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #2a2a2a;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-menu ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-menu ul li:last-child {
+        padding: 1rem;
+
+    }
+
+    .checkbtn{
+        display: block;
+    }
+
+    .menu-icon{
+        display:inline-flex;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    #check:checked ~ .nav-menu{
+        transform: translateX(0);
+    }
+
+    #check{
+        display: none;
+    }
+
+    .map-alucivo img{
+        width: 100%;    
+        height: 100%;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    h3 {
+        font-size: 2.5vw;
+    }
+
+    p{
+        font-size: 1.5vw;
+    }
+
+    a {font-size: 1.5vw;
+
+    }
+
+    .hotel2{
+        padding: 1rem;
+    }
+
+    .hotel-grid {
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(8,1fr);
+        height: 2400px;
+        padding: 1px;
+        grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px;
+        justify-content:flex;
+        flex-direction: row;
+    }
+
+    .hotel-item-img{
+        width: 100%;
+        height: auto;
+        margin: 2px;
+    }
+
+    .hotel-item-detail{
+        padding: 1px;
+    }
+
+    #footer {
+        height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer a {
+        margin: 0.5rem 0;
+        font-size: 0.75rem;
+    }
+
+    .deco-p{
+        display: none;
+    }
+
+    form{
+        margin: 30px;
+        padding: 55px 50px;
+    }
+
+    .txt-label{
+        font-size: 3vw;
+    }
+
+    .form-h2{
+        font-size: 4vw;
+    }
+
+    
+}
+
+@media screen and (max-width:900px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    .logo-header img {
+        width: 45px;
+    }
+
+    .nav-menu li {
+        margin-right: 2rem;
+    }
+    
     h2 {
         font-size: 2.5vw;
     }
@@ -300,92 +507,78 @@ input::placeholder, textarea::placeholder{
         margin: 30px;
         padding: 55px 120px;
     }
-}
 
-@media screen and (max-width:767px) {
+    main {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    #footer{
+        height: 80px;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-alucivo img{
+        width: 100%;
+        align-items: center;
+    }
+
+    
+}
+@media screen and (min-width:900px) {
+    header {
+        padding: 0.5rem 2rem;
+    }
+
+    .logo-header img {
+        width: 55px;
+    }
+
+    .nav-menu li {
+        margin-right: 3rem;
+    }
+
     h2 {
-        font-size: 3vw;
+        font-size: 2vw;
     }
 
     h3 {
-        font-size: 2.5vw;
+        font-size: 1.5vw;
     }
 
-    .hotel-grid {
-        grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(8,1fr);
-        height: 2500px;
-        padding: 20px;
-        grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px;
-        justify-content:flex-end;
+    .hotel-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        height: 2000px;
     }
 
-    .hotel-item-img{
-        width: 80%;
-        height: auto;
-        margin: 2px;
+    .hotel-item-detail {
+        margin: 10px;
+    }
+
+    form {
+        margin: 30px;
+        padding: 55px 250px;
+    }
+
+    main {
+        padding: 1rem;
+        font-size: 1rem;
     }
 
     #footer {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .checkbtn{
-        display: block;
-    }
-
-    .menu-icon{
-        display:block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-
-    .nav-menu ul{
-        display: block;
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        background: #2a2a2a;
-        opacity: 1;
-        width: 100%;
-        height: 100vh;
-        right: 0;
-    }
-
-    .nav-menu ul li{
-        padding: 2rem;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-    }
-
-    .nav-menu ul li:last-child{
-        background: none;
+        height: 100px;
         padding: 1rem;
+        flex-direction: row;
+        align-items: center;
     }
 
-    #check:checked ~ ul{
-        left: 0;
+    .map-alucivo img {
+        width: 100%;
+        height: 100%;
+        padding-top: 5px;
+        overflow: hidden;
+        flex-wrap: wrap;
     }
-
-    .deco-p{
-        display: none;
-    }
-
-    form{
-        margin: 30px;
-        padding: 55px 50px;
-    }
-
-    .txt-label{
-        font-size: 3vw;
-    }
-
-    .form-h2{
-        font-size: 4vw;
-    }
-    
 }
