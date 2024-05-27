@@ -3,32 +3,14 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
-html, body{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
 body{
-    font-family: 'Roboto', sans-serif;
     background-color: white;
     overflow-x: hidden;
-    overflow-y: auto;
-}
-
-.main-content{
-    flex: 1;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-}
-
-.main-content #hotel-item{
-    flex: 1;
+    overflow-y: scroll;
 }
 
 h2{
@@ -44,75 +26,51 @@ h3{
 
 p{
     color: #ffffff;
-    font-size: 1rem;
 }
 
 a, li{
     font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: 1.2rem;
-    display: block;    
+    color: white;    
 }
 
 
 /*HEADER*/
+.logo-header img{
+    width: 55px;
+}
 
 header{
-    position: sticky;
+    position:sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color:#edde05;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 2em;
+    padding: 0.5rem 2rem;
     width: 100%;
     
-}
-.logo-header {
-    display: flex;
-    align-items: center;
-    padding-left: 2rem;
-}
-
-.logo-header img{
-    width: 55px;
-    height: auto;
-}
-
-.nav-menu {
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    position: relative;
 }
 
 .nav-menu ul{
     display: flex;
-    list-style: none;
     align-items: center;
+    z-index: 1000;
 }
 
 .nav-menu li{
     margin-right: 3rem;
 }
 
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
 .nav-menu a:hover{
     color: red;
-    
 }
+
 .nav-menu li:last-child{
     background-color: #ec870c;
     border: 4.5px solid #ec870c;
-    padding: 0.25rem, 0.75rem;
-    border-radius: 0.2rem;
+    padding: .25rem , 75rem;
+    border-radius: .2rem;
 
 }
 
@@ -122,15 +80,7 @@ header{
     border-radius: 50px;
 }
 
-.checkbtn {
-    display: none;
-}
 
-.menu-icon{
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-}
 .menu-icon img{
     width: 30px;
     height: 30px;
@@ -143,14 +93,13 @@ header{
 
 
 /*INDEX*/
-.map-alucivo{
+.map-alusivo{
     width: 100%;
     height: 100%;
     padding-top: 5px;
-    overflow: hidden;
-    flex-wrap: wrap;
 }
 
+/*HOTELERIA Y ACTIVIDADES*/
 /*GRID*/
 .hotel-item-img{
     width: 450px;
@@ -167,7 +116,8 @@ header{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(4,1fr);
-    gap: 10px 20px;
+    column-gap: 20px;
+    row-gap: 10px;
     place-content: center;
     place-items: center;   
 }
@@ -186,6 +136,14 @@ header{
 
 
 /*HISTORIA*/
+.histo-h2{
+    color: white;
+    border-radius: 20px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: x-large;
+}
+
 #histo-id{
     background-color: #ec870c;
     margin: 30px;
@@ -193,10 +151,14 @@ header{
     
 }
 
-#histo-p{
+.histo-p{
     color: white;
-    font-size:x-large;
+    font-size:large;
     padding: 2rem;
+    text-align:justify;
+}
+
+.decoration{
     text-align: center;
 }
 
@@ -227,8 +189,8 @@ input, textarea{
     padding: 17px 25px;
     border-radius: 25px;
     margin-bottom: 20px;
-    background-color: #ffffff;
-    border: 3px solid #808080;
+    background-color: white;
+    border: 3px solid white;
     color: black;
     outline: none;
 }
@@ -237,20 +199,10 @@ input::placeholder, textarea::placeholder{
     color: rgb(124, 124, 124)
 }
 
-.form-txt{
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
+.checkbox {
+    justify-content: center;
+    align-items: center;
     text-align: center;
-}
-
-.form-txt a{
-    color: rgb(255, 0, 0);
-    
-}
-
-.form-txt a:hover{
-    color: #00ff55;
 }
 
 .form-btn{
@@ -260,7 +212,7 @@ input::placeholder, textarea::placeholder{
     border-radius: 25px;
     background-color: #ff0000;
     cursor: pointer;
-    border: 3px solid rgb(131, 131, 131);
+    border: 3px solid #ff0000;
 }
 
 .form-btn:hover{
@@ -295,20 +247,17 @@ input::placeholder, textarea::placeholder{
     align-items: center;
     background-color:#edde05;
     display: flex;
-    flex-direction: row;
     height: 100px;
     width: 100%;
     gap: 20px;
     justify-content: center;
-    flex-shrink: 0;
 }
 
 #footer a{
     text-decoration: none;
     color: #FFF;
-    margin: 0.5rem;
-    display: flex;
-    flex-direction: row;
+    position: static;
+    margin-right: 1rem;
     
 }
 
@@ -323,8 +272,8 @@ input::placeholder, textarea::placeholder{
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-    left: 50px;
-    right: 50px;
+    left: 50;
+    right: 50;
     bottom: 30px;
 }
 
@@ -333,74 +282,38 @@ input::placeholder, textarea::placeholder{
 }
 
 
-/*MEDIA QUERIS*/
-@media screen and (max-width:672px) {
-    
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        position: sticky;
+/*MEDIA QUERIES*/
+
+/*TABLET*/
+
+@media screen and (min-width:767px) and (max-width:1023px) {
+    h2 {
+        font-size: 2.5vw;
     }
 
-    .logo-header img {
-        width: 40px;
+    h3 {
+        font-size: 2vw;
     }
 
-    .nav-menu{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: #2a2a2a;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
+    .hotel-grid { 
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(4,1fr);
+        height: 1500px;
     }
 
-    .nav-menu ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
+    .hotel-item-detail{
+        margin: 20px;
     }
 
-    .nav-menu ul li {
-        margin: 1.5rem 0;
+    form{
+        margin: 30px;
+        padding: 55px 120px;
     }
+}
 
-    .nav-menu ul li:last-child {
-        padding: 1rem;
+/* CELULAR */
 
-    }
-
-    .checkbtn{
-        display: block;
-    }
-
-    .menu-icon{
-        display:inline-flex;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-    }
-    #check:checked ~ .nav-menu{
-        transform: translateX(0);
-    }
-
-    #check{
-        display: none;
-    }
-
-    .map-alucivo img{
-        width: 100%;    
-        height: 100%;
-    }
-
+@media screen and (max-width:767px) {
     h2 {
         font-size: 3vw;
     }
@@ -409,54 +322,102 @@ input::placeholder, textarea::placeholder{
         font-size: 2.5vw;
     }
 
-    p{
-        font-size: 1.5vw;
-    }
-
-    a {font-size: 1.5vw;
-
-    }
-
-    .hotel2{
-        padding: 1rem;
-    }
-
+    /*INDEX*/
+    .map-alusivo{
+        width: auto;
+        height: auto;
+        padding-top: 5px;
+    }    
+    
+    /*HOTELERIA Y ACTIVIDADES*/
     .hotel-grid {
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: repeat(8,1fr);
-        height: 2400px;
-        padding: 1px;
+        height: 2500px;
+        padding: 20px;
         grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px;
-        justify-content:flex;
-        flex-direction: row;
+        justify-content:;
+
     }
 
     .hotel-item-img{
-        width: 100%;
+        width:80%;
         height: auto;
         margin: 2px;
+    
     }
 
-    .hotel-item-detail{
-        padding: 1px;
-    }
 
+    /*FOOTER*/
     #footer {
-        height: auto;
-        padding: 1rem 0;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
     }
 
     #footer a {
-        margin: 0.5rem 0;
-        font-size: 0.75rem;
+        margin-left: 10px;
+        
     }
 
-    .deco-p{
-        display: none;
+    .tooltip-span{
+    display: none;
+    position:fixed;
+    background-color: #2a2a2a;
+    border: 1px solid white;
+    line-height: 10px;
+    text-align:left;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    left: 50;
+    right: 50;
+    bottom: 30px;
+}
+    
+        
+    
+    /*HEADER*/
+    .checkbtn{
+        display: block;
     }
 
+    .menu-icon{
+        display:block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .nav-menu ul{
+        display: block;
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: #2a2a2a;
+        opacity: 1;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+    }
+
+    .nav-menu ul li{
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .nav-menu ul li:last-child{
+        background: none;
+        padding: 1rem;
+    }
+
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    /*CONTACTO*/
     form{
         margin: 30px;
         padding: 55px 50px;
@@ -469,162 +430,5 @@ input::placeholder, textarea::placeholder{
     .form-h2{
         font-size: 4vw;
     }
-
     
-}
-
-@media screen and (max-width:900px) {
-    header {
-        padding: 0.5rem 1rem;
-        align-items: flex-start;
-        width: 100%;
-        position: sticky;
-    }
-
-    .logo-header img {
-        width: 45px;
-    }
-
-    .nav-menu li {
-        margin-right: 2rem;
-    }
-    
-    h2 {
-        font-size: 2.5vw;
-    }
-
-    h3 {
-        font-size: 2vw;
-    }
-
-    p{
-        font-size: 1.5vw;
-    }
-
-    a {font-size: 2.5vw;
-        text-align: center;
-
-    }
-
-    .hotel2{
-        padding: 1rem;
-    }
-
-    .hotel-grid { 
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(4,1fr);
-        height: 1500px;
-        justify-content:flex;
-        flex-direction: row;
-    }
-
-    .hotel-item-img{
-        width: 100%;
-        height: auto;
-        margin: 2px;
-    }
-
-    .hotel-item-detail{
-        margin: 20px;
-    }
-
-    form{
-        margin: 30px;
-        padding: 55px 120px;
-    }
-
-    main {
-        padding: 1rem;
-        font-size: 1rem;
-    }
-    #footer{
-        height: 80px;
-        padding: 1rem;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .map-alucivo img{
-        width: 100%;
-        align-items: center;
-    }
-
-    
-}
-@media screen and (min-width:900px) {
-    header {
-        padding: 0.5rem 2rem;
-    }
-
-    .logo-header img {
-        width: 55px;
-    }
-
-    .nav-menu li {
-        margin-right: 3rem;
-    }
-
-    h2 {
-        font-size: 2vw;
-    }
-
-    h3 {
-        font-size: 1.5vw;
-    }
-
-    p{
-        font-size: 1.5vw;
-    }
-
-    a {font-size: 2.5vw;
-        text-align: center;
-
-    }
-
-    .hotel2{
-        padding: 1rem;
-    }
-
-    .hotel-grid { 
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 1fr);
-        height: 2000px;
-        justify-content:flex;
-        flex-direction: row;
-    }
-
-    .hotel-item-img{
-        width: 100%;
-        height: auto;
-        margin: 2px;
-    }
-
-    .hotel-item-detail {
-        margin: 10px;
-    }
-
-    form {
-        margin: 30px;
-        padding: 55px 250px;
-    }
-
-    main {
-        padding: 1rem;
-        font-size: 1rem;
-    }
-
-    #footer {
-        height: 100px;
-        padding: 1rem;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .map-alucivo img {
-        width: 100%;
-        height: 100%;
-        padding-top: 5px;
-        overflow: hidden;
-        flex-wrap: wrap;
-    }
 }

@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="icon" href="./favicon.ico">
 </head>
-
-    
+   
+<body  class="form-body">
     <!--HEADER-->
 
-<body  class="form-body">
     <header class="header">
         <div class="logo-header">
             <img src="./img/logo.png" alt="">
@@ -20,20 +19,19 @@
         <nav class="nav-menu">
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
-                <i class="menu-icon"><img src="./img/btn-burger.png"></i>
+                <i class="menu-icon"><img src="./img/btn-burger.png" alt=""></i>
             </label>
             <ul class="nav-list"> 
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="hoteleria.html">Hoteleria</a></li>
                 <li><a href="Actividades.html">Actividades</a></li>
-                <li><a href="Historia.html">Historia</li> 
+                <li><a href="Historia.html">Historia</a></li> 
                 <li><a href="Contactenos.html">Contactenos</a></li>              
             </ul>
         </nav>
     </header>
 
-    
-    <!--BANNER-->
+    <!--MAIN-->
 
     <main>
         <form action="#" id="formContac" novalidate>
@@ -51,12 +49,12 @@
                 <div class="error" id="error-email"></div>
                 <input type="email" name="email" id="email" placeholder="Email..">
                 
-                <label for="message" class="txt-label">-Mensaje</label>
+                <label class="txt-label">-Mensaje</label>
                 <div class="error" id="error-mensaje"></div>
                 <textarea name="message" id="mensaje" cols="30" rows="20" placeholder="Escriba su mensaje.."></textarea>
                
-                <label for="nac" class="txt-label">-Nacionalidad</label>
-                <select name="" id="">
+                <label class="txt-label">-Nacionalidad</label>
+                <select name="-nacionalidad" id="nacionalidad">
                     <option value="">Argentina</option>
                     <option value="">Brasil</option>
                     <option value="">Uruguay</option>
@@ -65,8 +63,8 @@
                 </select>
 
                 <br><br>
-                <div class="error" id="error-mensaje"></div>
-                <label for="politicas-priv">
+                <div class="error" id="error-mensaje2"></div>
+                <label class="checkbox">
                 <input type="checkbox" name="politicasPriv" id="politicas-priv">Acepto los terminos y condiciones
                 </label>
                 
@@ -76,13 +74,11 @@
         </form>
     </main>
 
-
-
     <!--FOOTER-->
 
     <footer id="footer"> 
         <a href="#" class="tooltip">Términos y condiciones <span class="tooltip-span">Todos los derechos reservados.</span></a>
-        <a href="#" class="tooltip">Preguntas frecuentes <span class="tooltip-span">✉ xxx@gmail.com.</span></a>
+        <a href="#" class="tooltip">Preguntas frecuentes <span class="tooltip-span">✉ contact@vivemadrid.com</span></a>
         <a href="#" class="tooltip">Ayuda <span class="tooltip-span">☎ (o11) 6422-0953</span></a>
     </footer>
 
